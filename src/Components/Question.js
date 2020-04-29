@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './Question.css';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'; 
+
 const Question = (props) => {
     const [hasAnswered, setHasAnswered] = useState(false);
     const onAnswered = () => {
@@ -14,8 +15,8 @@ const Question = (props) => {
         <div className="question">
             <p>{props.question}</p>
             <div className="buttons">
-                <button className="red button" disabled={hasAnswered} onClick={() => onClick("nie")}>nie</button>
-                <button className="green button" disabled={hasAnswered} onClick={() => onClick("tak")}>tak</button>
+                <button className="red button" disabled={hasAnswered} onClick={() => onClick("nie")}>źle</button>
+                <button className="green button" disabled={hasAnswered} onClick={() => onClick("tak")}>dobrze</button>
             </div>
             <CountdownCircleTimer
             onComplete={() => {
